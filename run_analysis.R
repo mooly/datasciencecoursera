@@ -121,6 +121,7 @@ newlabels<-c("id","activity",
              "JerkGyroscopeMagnitudeSTDFrequencyDomain",
              "JerkGyroscopeMagnitudeWeightedMeanFrequencyDomain"             
              )
+colnames(subdata)<-newlabels
 # write.table(subdata,file="tidydata.txt")
 subdatasum <- group_by(subdata,id,activity)
 subdatasum <- summarise_each(subdatasum,funs(mean))
