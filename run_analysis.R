@@ -27,6 +27,7 @@ train_data <- bind_cols(train_subj,train_act,train_data)
 test_data <- bind_cols(test_subj,test_act,test_data)
 alldata <- bind_rows(train_data,test_data)
 
+# select only columns with mean or standard deviation (std) values
 mean_std_cols <- grep("mean|std",names(alldata))
 subdata <- alldata[,c(1,2,mean_std_cols)]
 
@@ -39,6 +40,7 @@ for (i in 1:length(subdata$activity)) {
     if (subdata$activity[i]==5) subdata$activity[i]<-"standing"
     if (subdata$activity[i]==6) subdata$activity[i]<-"laying"
 }
+# rename columns
 newlabels<-c("id","activity",
              "BodyAccelerationMeanXaxisTimeDomain",
              "BodyAccelerationMeanYaxisTimeDomain",
