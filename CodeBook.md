@@ -13,6 +13,9 @@ Files included as raw datasets:
 
 (Source: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones)
 
+Run statement in R console:
+source('~/datasciencecoursera/run_analysis.R')
+
 ### Variables
 
 * features = Measured variable names (column names for data frame)
