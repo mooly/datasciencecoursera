@@ -123,5 +123,5 @@ newlabels<-c("id","activity",
              )
 # write.table(subdata,file="tidydata.txt")
 subdatasum <- group_by(subdata,id,activity)
-subdatasum <- summarise(subdatasum,mean)
+subdatasum <- summarise_each(subdatasum,funs(mean))
 write.table(subdatasum,file="tidydata.txt")
